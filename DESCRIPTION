@@ -1,0 +1,18 @@
+Package: glmmVCtest
+Type: Package
+Title: Testing variance components in generalized linear mixed models (GLMMs)
+Version: 0.1.0
+Author: Stephanie Chen
+Maintainer: Stephanie Chen <stchen3@ncsu.edu>
+Description: Conducts likelihood-based hypothesis tests for variance components in generalized linear mixed models.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    nlme,
+    lme4,
+    RLRsim,
+    MASS
+Suggests: 
+    glmm
+RoxygenNote: 6.1.1

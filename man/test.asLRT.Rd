@@ -32,7 +32,7 @@ has not be extensively studied. Use results with caution.
 
 This method is known to have conservative
 type I error rates due to the asymptotic null distribution.
-Models without grouping variables for random effects (such as spline approximations)
+Models without grouping variables for random effects (such as basis approximations)
 cannot be estimated with \code{lme4::glmer}.
 }
 \examples{
@@ -50,7 +50,7 @@ test.asympLRT(glmer.alt,glm.null)
 
 }
 \seealso{
-\code{\link{test.nRLRT}}
+\code{\link{test.aRLRT}}
 
 Chen, S T., Xiao, L., and Staicu, A. M. (in prep).
 Restricted likelihood ratio tests for variance components in generalized linear mixed models.

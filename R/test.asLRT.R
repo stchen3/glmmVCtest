@@ -38,7 +38,7 @@
 #' }
 #'
 #' @seealso
-#' \code{\link{test.nRLRT}}
+#' \code{\link{test.aRLRT}}
 #'
 #' Chen, S T., Xiao, L., and Staicu, A. M. (in prep).
 #' Restricted likelihood ratio tests for variance components in generalized linear mixed models.

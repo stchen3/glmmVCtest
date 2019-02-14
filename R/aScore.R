@@ -1,6 +1,6 @@
-#' Normalized Score test for variance components in GLMMs.
+#' Approximate Score test for variance components in GLMMs.
 #'
-#' This function conducts the normalized (bias-corrected) Score (nScore) test from Zhang and Lin (2003)
+#' This function conducts the approximate (bias-corrected) Score (aScore) test from Zhang and Lin (2003)
 #' for testing zero-value variance components in generalized linear mixed models (GLMMs).
 #'
 #' This function assumes that all random effects have identity correlation structures.
@@ -76,10 +76,10 @@
 #'  Zmat.male[i,col.id]<-1
 #' }
 #'
-#' nScore.result<-nScore(null.resids,X=Xmat,V=V,dVdv=dVdv,Z.test=Zmat.male)
+#' aScore.result<-aScore(null.resids,X=Xmat,V=V,dVdv=dVdv,Z.test=Zmat.male)
 #' }
 
-nScore<-function(null.resids,X,Z.test,V=NULL,Vinv=NULL,dVdv){ #
+aScore<-function(null.resids,X,Z.test,V=NULL,Vinv=NULL,dVdv){ #
   if(is.null(Vinv)){
     if(is.null(V)){
       stop('V or Vinv must be supplied')

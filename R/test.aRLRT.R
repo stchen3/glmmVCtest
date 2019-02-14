@@ -1,6 +1,6 @@
-#' Normalized RLRT for variance components in GLMMs
+#' Approximate RLRT for variance components in GLMMs
 #'
-#' Conducts the normalized restricted likelihood ratio test (nRLRT) for a single
+#' Conducts the approximate restricted likelihood ratio test (aRLRT) for a single
 #' random effect (variance component) in a generalized linear mixed model (GLMM).
 #'
 #' This is our recommended method for testing variance components in GLMMs.
@@ -27,7 +27,7 @@
 #'
 #' @return Returns a list of testing results:
 #' \itemize{
-#' \item \code{nLRT}: outcome of the nRLRT test (statistic and p-value)
+#' \item \code{nLRT}: outcome of the aRLRT test (statistic and p-value)
 #' \item \code{std.data}: data.frame of standardized normalized responses (Ytilde),
 #' fixed effects design, and random effects design
 #' \item \code{fit.alt}: lme under the alternative hypothesis
@@ -44,14 +44,14 @@
 #' glmm.fit <- glmmPQL.mod(Mate~0+Cross, random=list(~0+int|Male),
 #' data=salamander, family=binomial, weights=rep(1,nrow(salamander)))
 #' # Test significance of random intercept for Male salamanders
-#' nRLRT <- test.nRLRT(glmm.fit)
+#' aRLRT <- test.aRLRT(glmm.fit)
 #' }
 #'
 #' @seealso
 #' Chen, S. T., Xiao, L., Staicu, A. M. (in prep).
 #' Restricted Likelihood Ratio Tests for Variance Components in Generalized Linear Models.
 #'
-test.nRLRT<-function(fit.glmmPQL){
+test.aRLRT<-function(fit.glmmPQL){
   # Extract and standardize to Ytilde
   mcall.orig<-fit.glmmPQL$mcall # lme call (X and Z haven't been adjusted to iid)
   mcall.std<-std.glmmPQL(fit.glmmPQL) # updated mcall with standardized Ytilde, Xtilde, Ztilde
@@ -87,7 +87,7 @@ test.nRLRT<-function(fit.glmmPQL){
   }
 
   # testing
-  nRLRT<-exactRLRT(m=fit.test,mA=fit.alt,m0=fit.null)
+  aRLRT<-exactRLRT(m=fit.test,mA=fit.alt,m0=fit.null)
 
-  return(list(nRLRT=nRLRT,std.data=std.data,fit.alt=fit.alt,fit.null=fit.null,fit.test=fit.test))
+  return(list(aRLRT=aRLRT,std.data=std.data,fit.alt=fit.alt,fit.null=fit.null,fit.test=fit.test))
 }

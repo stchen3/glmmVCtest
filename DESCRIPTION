@@ -16,3 +16,5 @@ Imports:
 Suggests: 
     glmm
 RoxygenNote: 6.1.1
+URL: http://github.com/stchen3/glmmVCtest
+BugReports: http://github.com/stchen3/glmmVCtest/issues

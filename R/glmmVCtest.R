@@ -35,7 +35,7 @@
 #' @name glmmVCtest
 #'
 #' @seealso
-#' Chen, S. T., Xiao, L., Staicu, A. M. (2019).
+#' Chen, S. T., Xiao, L., Staicu, A. M. (in prep).
 #' Restricted Likelihood Ratio Tests for Variance Components in Generalized Linear Models.
 #'
 #' Molenberghs, G. and Verbeke, G. (2007).

@@ -6,7 +6,8 @@
 #' This function assumes that all random effects have identity correlation structures.
 #' For more general correlations, consider other methods or modifying this function.
 #' Model estimation are under the NULL hypothesis at convergence, and should use functions
-#' glm (stats) or glmmPQL.mod (glmmVCtest) for estimation.
+#' glm (stats) or glmmPQL.mod (glmmVCtest) for generalized responses, or
+#' lm (stat), lme (nlme), or lmer (lme4) for normal responses.
 #' This method requires the design matrices for the fixed effects,
 #' random effect being tested, conditional variance structure, and first derivative of the
 #' conditional variance.

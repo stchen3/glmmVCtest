@@ -4,15 +4,16 @@
 \alias{test.aRLRT}
 \title{Approximate RLRT for variance components in GLMMs}
 \usage{
-test.aRLRT(fit.glmmPQL)
+test.aRLRT(fit)
 }
 \arguments{
-\item{fit.glmmPQL}{Alternative model estimated using the \code{glmmPQL.mod} function.}
+\item{fit}{Alternative model estimated using the \code{glmmPQL.mod} function (generalized responses)
+or \code{\link[nlme:lme]{lme}} function (normal responses).}
 }
 \value{
 Returns a list of testing results:
 \itemize{
-\item \code{nLRT}: outcome of the aRLRT test (statistic and p-value)
+\item \code{aRLRT}: outcome of the (a)RLRT test (statistic and p-value)
 \item \code{std.data}: data.frame of standardized normalized responses (Ytilde),
 fixed effects design, and random effects design
 \item \code{fit.alt}: lme under the alternative hypothesis

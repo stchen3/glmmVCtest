@@ -15,8 +15,12 @@
 #' Models without grouping variables for random effects (such as basis approximations)
 #' cannot be estimated with \code{lme4::glmer}.
 #'
-#' @param fit.alt alternative model estimated using \code{MASS::glmer} function.
-#' @param fit.null null model estimated using \code{MASS::glmer} function.
+#' @param fit.alt alternative model estimated using \code{lme4::glmer} function
+#' for generalized responses, or \code{nlme::lme} or \code{lme4:lmer} functions for normal
+#' responses.
+#' @param fit.null null model estimated using \code{lme4::glmer} or \code{stats::glm}
+#' functions for generalized responses, or \code{nlme::lme}, \code{lme4:lmer}, or
+#' \code{stats::lm} functions for normal responses.
 #'
 #' @return Returns a list of components:
 #' \itemize{
